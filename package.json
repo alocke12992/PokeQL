@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "GraphQl Node server hitting the pokemon Api",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "repository": "https://github.com/alocke12992/PokeQL.git",
   "author": "Andrew Locke <alocke12992@gmail.com>",
   "license": "MIT",
