@@ -20,6 +20,11 @@ const typeDefs = `
     ability: Ability
   }
 
+  type Ability {
+    name: String
+    url: String
+  }
+
   type StatObj {
     effort: Int
     base_stat: Int
@@ -31,3 +36,15 @@ const typeDefs = `
     url: String
   }
 `;
+
+const resolvers = {
+  Query: {
+    getPokemon: async (_, { id }) => {
+      let res = await axios(`http://pokeapi.co/api/v2/pokemon/${id}`)
+      return res.data
+    },
+  }
+}
+
+const server = new GraphQLServer({typeDefs, resolvers })
+server.start(() => console.log("Server is running at http://localhost:4000"))
