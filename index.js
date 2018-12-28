@@ -3,7 +3,8 @@ const axios = require("axios");
 
 const typeDefs = `
   type Query {
-    getPokemon(id: Int!): Pokemon
+    getPokemon(id: Int!): Pokemon!
+    allPokemon: [Pokemon]
   }
 
   type Pokemon {
@@ -43,6 +44,11 @@ const resolvers = {
       let res = await axios(`http://pokeapi.co/api/v2/pokemon/${id}`)
       return res.data
     },
+    allPokemon: (root, args, context) => {
+      return axios(`http://pokeapi.salestock.net/api/v2/pokemon`).then(response => {
+        return response.data.results
+      })
+    }
   }
 }
 
