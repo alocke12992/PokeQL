@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/alocke12992/PokeQL.git",
   "author": "Andrew Locke <alocke12992@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "graphql-yoga": "^1.16.9",
+    "nodemon": "^1.18.9"
+  }
 }
